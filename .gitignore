@@ -7,3 +7,5 @@ yarn/global
 zsh
 lazygit/state.yml
 nvim/plugin/packer_compiled.lua
+homebrew
+mume
