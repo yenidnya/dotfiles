@@ -75,17 +75,12 @@ colors:
 bell:
   animation: EaseOutExpo
   duration: 200
-  color: '0xffffff'
-selection:
-  # This string contains all characters that are used as separators for
-  # "semantic words" in Alacritty.
-  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
-  # When set to `true`, selected text will be copied to the primary clipboard.
-  save_to_clipboard: true
+  color: '#ffffff'
 # Allow terminal applications to change Alacritty’s window title.
 window.dynamic_title: true
 cursor:
-  style: Block
+  style:
+    shape: Block
   unfocused_hollow: true
 # Live config reload (changes require restart)
 live_config_reload: true
