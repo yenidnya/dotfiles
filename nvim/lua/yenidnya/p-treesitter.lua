@@ -1,10 +1,8 @@
 require 'nvim-treesitter.configs'.setup {
     ensure_installed = { "tsx", "lua", "rust", "json", "graphql", "regex", "vim", "markdown", "markdown_inline", "org" },
-
     sync_install = false,
     auto_install = true,
     ignore_install = { "javascript" },
-
     highlight = {
         enable = true,
         disable = {},
@@ -17,11 +15,6 @@ require 'nvim-treesitter.configs'.setup {
     autotag = {
         enable = true
     },
-    rainbow = {
-        enable = true,
-        extended_mode = true,
-        max_file_lines = nil
-    }
 }
 
 require('template-string').setup({
