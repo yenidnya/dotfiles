@@ -35,6 +35,9 @@ return require('packer').startup(function(use)
         'numToStr/Comment.nvim'
     }
 
+    -- Rust
+    use 'simrat39/rust-tools.nvim'
+
     -- Lualine
     use 'nvim-lualine/lualine.nvim'
 
