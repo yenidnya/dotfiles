@@ -22,6 +22,9 @@ if [ -f ~/.config/zsh/profiles/amazon ]; then
     source ~/.config/zsh/profiles/amazon
 fi
 
+# add personal binaries to path
+export PATH="$PATH:$HOME/.config/bin"
+
 # zsh
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
