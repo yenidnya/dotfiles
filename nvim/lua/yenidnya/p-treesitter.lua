@@ -1,12 +1,11 @@
 require 'nvim-treesitter.configs'.setup {
-    ensure_installed = { "tsx", "lua", "rust", "json", "graphql", "regex", "vim", "markdown", "markdown_inline", "org" },
+    ensure_installed = { "tsx", "lua", "rust", "json", "graphql", "regex", "vim", "markdown", "markdown_inline" },
     sync_install = false,
     auto_install = true,
     ignore_install = { "javascript" },
     highlight = {
         enable = true,
         disable = {},
-        additional_vim_regex_highlighting = { 'org' },
     },
     indent = {
         enable = true,

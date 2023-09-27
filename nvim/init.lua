@@ -20,7 +20,5 @@ require 'yenidnya.p-which_key'
 require 'yenidnya.p-zen_mode'
 require 'yenidnya.p-ufo'
 
--- needs to be initialised before treesitter
-require('orgmode').setup_ts_grammar()
 require 'yenidnya.p-treesitter'
-require 'yenidnya.p-org_mode'
+require 'yenidnya.p-neorg'
