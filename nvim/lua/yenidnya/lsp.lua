@@ -43,4 +43,7 @@ require('mason-lspconfig').setup_handlers({
             }
         }))
     end,
+    -- Typescript is configured in p-ts_tools.lua
 })
+
+return lsp_config;

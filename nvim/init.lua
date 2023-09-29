@@ -19,6 +19,7 @@ require 'yenidnya.p-todo_comments'
 require 'yenidnya.p-which_key'
 require 'yenidnya.p-zen_mode'
 require 'yenidnya.p-ufo'
+require 'yenidnya.p-ts_tools'
 
 require 'yenidnya.p-treesitter'
 require 'yenidnya.p-neorg'

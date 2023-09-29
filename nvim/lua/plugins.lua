@@ -51,6 +51,12 @@ return require('packer').startup(function(use)
     use 'ThePrimeagen/harpoon'
     use "princejoogie/dir-telescope.nvim"
 
+
+    use {
+        "pmizio/typescript-tools.nvim",
+        requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    }
+
     -- Compilation
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
@@ -59,7 +65,6 @@ return require('packer').startup(function(use)
 
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
-    use 'jose-elias-alvarez/typescript.nvim'
     use 'jose-elias-alvarez/null-ls.nvim'
 
     -- Treesitter
