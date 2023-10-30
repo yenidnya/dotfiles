@@ -1,11 +1,11 @@
 require('zen-mode').setup {
     window = {
-        backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
+        backdrop = 1, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
         -- height and width can be:
         -- * an absolute number of cells when > 1
         -- * a percentage of the width / height of the editor when <= 1
         -- * a function that returns the width or the height
-        width = 180, -- width of the Zen window
+        width = 150, -- width of the Zen window
         height = 1,  -- height of the Zen window
         -- by default, no options are changed for the Zen window
         -- uncomment any of the options below, or add other vim.wo options you want to apply
@@ -22,11 +22,11 @@ require('zen-mode').setup {
     plugins = {
         options = {
             enabled = true,
-            ruler = false,             -- disables the ruler text in the cmd line area
-            showcmd = false,           -- disables the command in the last line of the screen
+            ruler = false,   -- disables the ruler text in the cmd line area
+            showcmd = false, -- disables the command in the last line of the screen
         },
-        gitsigns = { enabled = true }, -- disables git signs
-        tmux = { enabled = true },     -- disables the tmux statusline
+        gitsigns = { enabled = false }, -- enable gitsigns
+        tmux = { enabled = false }, -- enable tmux line
         alacritty = {
             enabled = true,
             font = "18", -- font size

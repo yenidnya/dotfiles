@@ -17,9 +17,6 @@ wk.register({
         name = 'Code',
         i = {
             name = 'Imports',
-            o = { '<cmd>TypescriptOrganizeImports<cr>', 'Organize' },
-            m = { '<cmd>TypescriptAddMissingImports<cr>', 'Missing Imports' },
-            r = { '<cmd>TypescriptRemoveUnused<cr>', 'Remove Unused' },
         },
         r = { '<cmd>Telescope lsp_references<cr>', 'References' },
         d = { '<cmd>Telescope lsp_definitions<cr>', 'Definitions' },
@@ -64,6 +61,7 @@ wk.register({
         f = { tscope_builtin.find_files, "Files" },
         g = { tscope_builtin.live_grep, "Word" },
         b = { tscope_builtin.buffers, "Buffers" },
+        r = { tscope_builtin.resume, "Resume" },
         d = { "<cmd>Telescope dir live_grep<CR>", "Directory" }
     }
 }, wk_opts)
