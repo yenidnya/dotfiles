@@ -13,3 +13,4 @@ zsh/.zcompdump-*
 zsh/.zsh_history
 zsh/profiles/amazon
 zsh/zfuncs/deviceManager
+tmux/plugins
