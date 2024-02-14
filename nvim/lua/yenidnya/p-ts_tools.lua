@@ -3,7 +3,11 @@ local lsp_config = require("yenidnya.lsp");
 -- https://github.com/pmizio/typescript-tools.nvim
 require("typescript-tools").setup {
     on_attach = lsp_config.on_attach,
-    handlers = {},
+    handlers = {
+        -- Prettier does the formatting
+        ["textDocument/formatting"] = function()
+        end
+    },
     settings = {
         -- spawn additional tsserver instance to calculate diagnostics on it
         separate_diagnostic_server = true,
