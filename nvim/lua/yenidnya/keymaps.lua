@@ -62,7 +62,38 @@ wk.register({
         g = { tscope_builtin.live_grep, "Word" },
         b = { tscope_builtin.buffers, "Buffers" },
         r = { tscope_builtin.resume, "Resume" },
-        d = { "<cmd>Telescope dir live_grep<CR>", "Directory" }
+        d = { "<cmd>Telescope dir live_grep<CR>", "Directory" },
+        x = {
+            name = "Debugger",
+            c = { "<cmd>Telescope dap configurations<CR>", "Configurations" }
+        }
+    }
+}, wk_opts)
+
+local dapui = require('dapui')
+function toggle_dapui_fn()
+    local is_open = false
+    return function()
+        if is_open then
+            dapui.close()
+            is_open = false
+        else
+            dapui.open()
+            is_open = true
+        end
+    end
+end
+
+local dap = require("dap")
+
+wk.register({
+    d = {
+        name = "Debugger",
+        f = { "<cmd>Telescope dap configurations<CR>", "Configurations" },
+        c = { "<cmd>Telescope dap commands<CR>", "Commands" },
+        v = { "<cmd>Telescope dap variables<CR>", "Variables" },
+        u = { toggle_dapui_fn(), "Toggle UI" },
+        b = { dap.toggle_breakpoint, "Toggle Breakpoint" }
     }
 }, wk_opts)
 

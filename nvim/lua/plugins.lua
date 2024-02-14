@@ -6,9 +6,9 @@ return require('packer').startup(function(use)
 
     -- LSP
     use {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-        "neovim/nvim-lspconfig",
+        'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig.nvim',
+        'neovim/nvim-lspconfig',
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/nvim-cmp'
     }
@@ -28,7 +28,7 @@ return require('packer').startup(function(use)
     -- Text edit
     use {
         'rmagatti/alternate-toggler',
-        "windwp/nvim-autopairs",
+        'windwp/nvim-autopairs',
         'mg979/vim-visual-multi',
         'gcmt/wildfire.vim',
         'tpope/vim-surround',
@@ -46,12 +46,13 @@ return require('packer').startup(function(use)
     use 'MattesGroeger/vim-bookmarks'
     use 'tom-anders/telescope-vim-bookmarks.nvim'
     use 'ThePrimeagen/harpoon'
-    use "princejoogie/dir-telescope.nvim"
+    use 'princejoogie/dir-telescope.nvim'
+    use 'nvim-telescope/telescope-dap.nvim'
 
 
     use {
-        "pmizio/typescript-tools.nvim",
-        requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+        'pmizio/typescript-tools.nvim',
+        requires = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
     }
 
     -- Compilation
@@ -73,17 +74,24 @@ return require('packer').startup(function(use)
     -- Dashboard
     use 'echasnovski/mini.starter'
 
+    -- Neorg
     use {
-        "nvim-neorg/neorg",
-        run = ":Neorg sync-parsers",
-        requires = "nvim-lua/plenary.nvim",
+        'nvim-neorg/neorg',
+        run = ':Neorg sync-parsers',
+        requires = 'nvim-lua/plenary.nvim',
     }
 
+    -- Dap
+    use 'mfussenegger/nvim-dap'
+    use 'rcarriga/nvim-dap-ui'
+    use 'folke/neodev.nvim'
+    use 'rcarriga/cmp-dap'
+
     -- Misc
-    use "folke/todo-comments.nvim"
-    use "folke/zen-mode.nvim"
+    use 'folke/todo-comments.nvim'
+    use 'folke/zen-mode.nvim'
     use 'f-person/git-blame.nvim'
-    use "folke/which-key.nvim"
-    use "airblade/vim-gitgutter"
-    use "tpope/vim-fugitive"
+    use 'folke/which-key.nvim'
+    use 'airblade/vim-gitgutter'
+    use 'tpope/vim-fugitive'
 end)

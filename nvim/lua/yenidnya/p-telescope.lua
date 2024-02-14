@@ -35,3 +35,4 @@ require("dir-telescope").setup {}
 
 -- Load Extensions
 t.load_extension('dir')
+t.load_extension('dap')
