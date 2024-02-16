@@ -93,7 +93,14 @@ wk.register({
         c = { "<cmd>Telescope dap commands<CR>", "Commands" },
         v = { "<cmd>Telescope dap variables<CR>", "Variables" },
         u = { toggle_dapui_fn(), "Toggle UI" },
-        b = { dap.toggle_breakpoint, "Toggle Breakpoint" }
+        b = { dap.toggle_breakpoint, "Toggle Breakpoint" },
+        s = {
+            name = "Step",
+            i = { dap.step_into, "Step into" },
+            c = { dap.continue, "Continue" },
+            o = { dap.step_over, "Step Over" }
+        },
+        t = { dap.terminate, "Terminate" }
     }
 }, wk_opts)
 
