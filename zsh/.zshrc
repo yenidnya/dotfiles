@@ -32,6 +32,13 @@ plugins=(git zsh-syntax-highlighting zsh-nvm)
 source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Source fzf
+if [[ -f "${XDG_CONFIG_HOME}/.fzf.zsh" ]]; then 
+    source "${XDG_CONFIG_HOME}/.fzf.zsh"
+fi
+
+eval "$(zoxide init --cmd cd zsh)"
+
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
 export NVM_DIR="$HOME/.nvm"
