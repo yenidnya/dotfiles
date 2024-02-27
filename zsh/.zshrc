@@ -35,12 +35,14 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Source fzf
-if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
-    PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
-    # Auto-completion
-    source "/opt/homebrew/opt/fzf/shell/completion.zsh"
-    # Key bindings
-    source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+if command -v fzf &>/dev/null; then
+    if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
+        PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
+        # Auto-completion
+        source "/opt/homebrew/opt/fzf/shell/completion.zsh"
+        # Key bindings
+        source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+    fi
 else
     echo "fzf is not installed"
 fi
