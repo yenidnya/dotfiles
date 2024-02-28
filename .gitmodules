@@ -1,4 +1,4 @@
 [submodule "amazon"]
-	path = amzn
-	url = https://github.com/yenidnya/.config-amzn
+    path = amzn
+    url = https://github.com/yenidnya/.config-amzn
     branch = mainline
