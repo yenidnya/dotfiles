@@ -34,4 +34,5 @@ require("lazy").setup({
     require("yenidnya.p-git"),
     require("yenidnya.p-neorg"),
     require("yenidnya.p-vstask"),
+    require("yenidnya.p-amzn"),
 })

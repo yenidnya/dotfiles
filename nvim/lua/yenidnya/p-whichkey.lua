@@ -20,6 +20,7 @@ return {
 
         local tscope_builtin = require("telescope.builtin")
         local tscope = require("telescope")
+        local amzn_brazil = require("amzn-brazil")
 
         -- Code Actions
         wk.register({
@@ -36,6 +37,7 @@ return {
                 a = { vim.lsp.buf.code_action, "Actions", mode = { "n", "v" } },
                 f = "Format", -- formatting is defined in p-formatter
                 n = { vim.lsp.buf.rename, "Rename" },
+                c = { amzn_brazil.get_remote_code_url, "Copy remote URL" }
             },
             e = { ":lua vim.diagnostic.open_float()<cr>", "Show Error" },
         }, wk_opts)
