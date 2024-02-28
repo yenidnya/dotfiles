@@ -13,15 +13,9 @@ export EDITOR="/opt/homebrew/bin/nvim"
 export CARGO_HOME="$HOME/.cargo"
 export LUA_CPATH=";?.dylib"
 
-# functions
-fpath=(
-    ~/.config/zsh/zfuncs
-    "${fpath[@]}"
-)
-
-# source profiles
-if [ -f ~/.config/zsh/profiles/amazon ]; then
-    source ~/.config/zsh/profiles/amazon
+# source amzn 
+if [ -f ~/.config/amzn/zsh/profile ]; then
+    source ~/.config/amzn/zsh/profile
 fi
 
 # add personal binaries to path
