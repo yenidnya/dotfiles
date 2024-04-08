@@ -57,9 +57,6 @@ return {
                                     -- Use custom target dir for rust-analyzer to prevent collisions with brazil-build
                                     CARGO_TARGET_DIR = ".rust-analyzer/target",
                                 },
-                                check = {
-                                    allTargets = false,
-                                },
                             },
                         },
                     }))
