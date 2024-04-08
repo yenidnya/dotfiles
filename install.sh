@@ -47,3 +47,6 @@ fi
 #TODO: brew install fzf
 #TODO: git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k \n echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 #TODO: LLDB 
+
+# TODO: cargo insalls
+# https://github.com/tamasfe/taplo
