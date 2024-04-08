@@ -24,6 +24,7 @@ return {
             html = { "prettierd" },
             yaml = { "prettierd" },
             css = { "prettierd" },
+            toml = { "taplo" }
 
         },
         -- Customize formatters
