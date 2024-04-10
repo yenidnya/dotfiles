@@ -44,9 +44,11 @@ else
     brew install tmux
 fi
 
-#TODO: brew install fzf
-#TODO: git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k \n echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
-#TODO: LLDB 
+# TODO: complete list with used packages
+# brew install fzf
+# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k \n echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+# LLDB 
+# brew install btop
 
 # TODO: cargo insalls
 # https://github.com/tamasfe/taplo
