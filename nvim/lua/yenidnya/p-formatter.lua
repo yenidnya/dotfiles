@@ -31,6 +31,9 @@ return {
         formatters = {
             prettierd = {
                 env = { PRETTIERD_DEFAULT_CONFIG = vim.fn.expand('~/.config/.prettierrc') }
+            },
+            taplo = {
+                env = { TAPLO_CONFIG = vim.fn.expand('~/.config/.taplo.toml') }
             }
         },
     },
