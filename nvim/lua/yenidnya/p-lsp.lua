@@ -22,11 +22,6 @@ return {
                 map.set("n", "<leader>ctd", vim.lsp.buf.type_definition, { buffer = bufnr, desc = "Type def" })
                 map.set("n", "<leader>cn", vim.lsp.buf.rename, { buffer = bufnr, desc = "Rename" })
                 map.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { buffer = bufnr, desc = "Code Action" })
-
-                -- format
-                map.set("n", "<leader>cf", function()
-                    vim.lsp.buf.format({ async = true })
-                end, { buffer = bufnr, desc = "Format" })
             end
 
             local lsp_config = {
