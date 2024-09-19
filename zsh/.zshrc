@@ -49,6 +49,8 @@ else
     echo "zoxide is not installed"
 fi
 
+# set readline to vi
+set -o vi
 
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
