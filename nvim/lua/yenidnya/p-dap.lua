@@ -15,8 +15,8 @@ return {
 
 		dap.adapters.lldb = {
 			type = "executable",
-			-- TODO: make path non static
-			command = "/usr/local/bin/lldb-vscode",
+			-- TODO: lldb-dap is sourced in the zsh. need to fix it 
+			command = "lldb-dap",
 			name = "lldb",
 		}
 
