@@ -20,6 +20,7 @@ fi
 
 # add personal binaries to path
 export PATH="$PATH:$HOME/.config/bin"
+export PATH="$PATH:/opt/homebrew/opt/llvm/bin"
 
 # zsh
 export ZSH="$HOME/.oh-my-zsh"
@@ -30,13 +31,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Source fzf
 if command -v fzf &>/dev/null; then
-    if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
-        PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
-        # Auto-completion
-        source "/opt/homebrew/opt/fzf/shell/completion.zsh"
-        # Key bindings
-        source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
-    fi
+    source <(fzf --zsh)
 else
     echo "fzf is not installed"
 fi
