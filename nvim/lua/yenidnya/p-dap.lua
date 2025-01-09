@@ -15,7 +15,7 @@ return {
 
 		dap.adapters.lldb = {
 			type = "executable",
-			-- TODO: lldb-dap is sourced in the zsh. need to fix it 
+			-- TODO: lldb-dap is sourced in the zsh. need to fix it
 			command = "lldb-dap",
 			name = "lldb",
 		}
