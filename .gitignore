@@ -16,3 +16,6 @@ zsh/zfuncs/deviceManager
 tmux/plugins
 crossnote
 bin/wasm_filesize.sh
+bin/neovim/share
+bin/neovim/lib/nvim/parser
+bin/neovim/bin/nvim
