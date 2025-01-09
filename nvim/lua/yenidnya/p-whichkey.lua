@@ -9,6 +9,7 @@ map.set("v", "K", ":m '<-2<CR>gv=gv")
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
+	version = "2.1.0", -- pin to 2.1
 	config = function()
 		local wk_opts = { prefix = "<leader>" }
 		local wk = require("which-key")
