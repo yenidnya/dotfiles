@@ -2,16 +2,17 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# yenidnya aliases
-alias vim="/opt/homebrew/bin/nvim"
-alias lg="lazygit"
-alias pvim="/usr/bin/vim"
-
 # defaults
 export XDG_CONFIG_HOME="$HOME/.config"
 export EDITOR="/opt/homebrew/bin/nvim"
 export CARGO_HOME="$HOME/.cargo"
 export LUA_CPATH=";?.dylib"
+export LUA_PATH="$LUA_PATH;$XDG_CONFIG_HOME/nvim/lua/yenidnya/?.lua"
+
+# yenidnya aliases
+alias vim="$XDG_CONFIG_HOME/bin/neovim/bin/nvim"
+alias lg="lazygit"
+alias oldvim="/usr/bin/vim"
 
 # source amzn 
 if [ -f ~/.config/amzn/zsh/profile ]; then
