@@ -4,7 +4,7 @@ fi
 
 # defaults
 export XDG_CONFIG_HOME="$HOME/.config"
-export EDITOR="/opt/homebrew/bin/nvim"
+export EDITOR="vim"
 export CARGO_HOME="$HOME/.cargo"
 export LUA_CPATH=";?.dylib"
 export LUA_PATH="$LUA_PATH;$XDG_CONFIG_HOME/nvim/lua/yenidnya/?.lua"
