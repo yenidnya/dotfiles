@@ -26,6 +26,7 @@ return {
 			css = { "prettierd" },
 			toml = { "taplo" },
 			markdown = { "mdformat" },
+			sh = { "shfmt" },
 		},
 		-- Customize formatters
 		formatters = {
