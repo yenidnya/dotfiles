@@ -29,6 +29,8 @@ return {
 				on_attach = lsp_attach,
 			}
 
+			local rust_commands = require("rust-commands")
+
 			require("mason-lspconfig").setup_handlers({
 				function(server_name)
 					require("lspconfig")[server_name].setup(lsp_config)
@@ -52,11 +54,29 @@ return {
 									-- Use custom target dir for rust-analyzer to prevent collisions with brazil-build
 									CARGO_TARGET_DIR = ".rust-analyzer/target",
 								},
+								checkOnSave = {
+									allTargets = true,
+								},
 							},
+						},
+						commands = {
+							ExpandMacro = { rust_commands.expand_macro },
 						},
 					}))
 				end,
 				-- Typescript is configured in p-ts_tools.lua
+				typos_lsp = function()
+					require("lspconfig").typos_lsp.setup({
+						init_options = {
+							-- Custom config. Used together with a config file found in the workspace or its parents,
+							-- taking precedence for settings declared in both.
+							-- Equivalent to the typos `--config` cli argument.
+							config = "~/.config/typos.toml",
+							-- How typos are rendered in the editor, can be one of an Error, Warning, Info or Hint.
+							diagnosticSeverity = "Hint",
+						},
+					})
+				end,
 			})
 		end,
 	},
