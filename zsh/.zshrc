@@ -2,17 +2,18 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# defaults
-export XDG_CONFIG_HOME="$HOME/.config"
-export EDITOR="vim"
-export CARGO_HOME="$HOME/.cargo"
-export LUA_CPATH=";?.dylib"
-export LUA_PATH="$LUA_PATH;$XDG_CONFIG_HOME/nvim/lua/yenidnya/?.lua"
-
 # yenidnya aliases
 alias vim="$XDG_CONFIG_HOME/bin/neovim/bin/nvim"
 alias lg="lazygit"
 alias oldvim="/usr/bin/vim"
+
+# defaults
+export XDG_CONFIG_HOME="$HOME/.config"
+export EDITOR="$XDG_CONFIG_HOME/bin/neovim/bin/nvim"
+export MITMPROXY_EDITOR="$XDG_CONFIG_HOME/bin/neovim/bin/nvim"
+export CARGO_HOME="$HOME/.cargo"
+export LUA_CPATH=";?.dylib"
+export LUA_PATH="$LUA_PATH;$XDG_CONFIG_HOME/nvim/lua/yenidnya/?.lua"
 
 # source amzn 
 if [ -f ~/.config/amzn/zsh/profile ]; then
@@ -21,6 +22,7 @@ fi
 
 # add personal binaries to path
 export PATH="$PATH:$HOME/.config/bin"
+export PATH="$PATH:$XDG_CONFIG_HOME/bin/neovim/bin"
 export PATH="$PATH:/opt/homebrew/opt/llvm/bin"
 
 # zsh
