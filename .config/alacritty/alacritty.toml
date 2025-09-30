@@ -1,0 +1,106 @@
+[bell]
+animation = "EaseOutExpo"
+color = "#ffffff"
+duration = 200
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[[colors.indexed_colors]]
+color = "0xdc9656"
+index = 16
+
+[[colors.indexed_colors]]
+color = "0xa16946"
+index = 17
+
+[[colors.indexed_colors]]
+color = "0x282828"
+index = 18
+
+[[colors.indexed_colors]]
+color = "0x383838"
+index = 19
+
+[[colors.indexed_colors]]
+color = "0xb8b8b8"
+index = 20
+
+[[colors.indexed_colors]]
+color = "0xe8e8e8"
+index = 21
+
+[colors.bright]
+black = "0x585858"
+blue = "0x7cafc2"
+cyan = "0x86c1b9"
+green = "0xa1b56c"
+magenta = "0xba8baf"
+red = "0xab4642"
+white = "0xf8f8f8"
+yellow = "0xf7ca88"
+
+[colors.cursor]
+cursor = "0xd8d8d8"
+text = "0x181818"
+
+[colors.normal]
+black = "0x181818"
+blue = "0x7cafc2"
+cyan = "0x86c1b9"
+green = "0xa1b56c"
+magenta = "0xba8baf"
+red = "0xab4642"
+white = "0xd8d8d8"
+yellow = "0xf7ca88"
+
+[colors.primary]
+background = "0x181818"
+foreground = "0xd8d8d8"
+
+[cursor]
+unfocused_hollow = true
+
+[cursor.style]
+shape = "Block"
+
+[font]
+size = 18.0
+
+[font.bold]
+family = "JetBrainsMono NFM"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono NFM"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrainsMono NFM"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono NFM"
+style = "Light"
+
+[scrolling]
+history = 100000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[window]
+opacity = 0.99
+
+[window.dimensions]
+columns = 125
+lines = 28
+
+[window.padding]
+x = 5
+y = 5
+
+[general]
+live_config_reload = true
