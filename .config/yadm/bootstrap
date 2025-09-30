@@ -1,0 +1,138 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [[ "$(uname)" != "Darwin" ]]; then
+    echo "This bootstrap is intended for macOS. Aborting."
+    exit 1
+fi
+
+if ! xcode-select -p >/dev/null 2>&1; then
+    echo "Xcode Command Line Tools not found."
+    echo "Install them by running: xcode-select --install"
+    echo "Then re-run this bootstrap: yadm bootstrap"
+    exit 1
+fi
+
+# Install Homebrew if missing
+if ! command -v brew >/dev/null 2>&1; then
+    echo "Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>~/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# Install Rust (and Cargo) if missing
+if ! command -v cargo >/dev/null 2>&1; then
+    echo "Installing Rust and Cargo..."
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    source "$HOME/.cargo/env"
+fi
+
+if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
+    echo "Installing oh-my-zsh..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+fi
+
+ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
+if [[ ! -d "$ZSH_CUSTOM/themes/powerlevel10k" ]]; then
+    echo "Installing Powerlevel10k theme..."
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
+        "$ZSH_CUSTOM/themes/powerlevel10k"
+fi
+
+# Install zsh-syntax-highlighting plugin
+if [[ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]]; then
+    echo "Cloning zsh-syntax-highlighting..."
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+fi
+
+if [[ ! -d "$HOME/.nvm" ]]; then
+    echo "Installing NVM..."
+    export NVM_DIR="$HOME/.nvm"
+    mkdir -p "$NVM_DIR"
+    brew install nvm
+    chmod +r $(brew --prefix nvm)/nvm.sh
+    [ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"
+fi
+
+if ! command -v npm >/dev/null 2>&1; then
+    echo "Installing latest stable Node.js via NVM..."
+    [ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"
+    nvm install --lts
+    nvm use --lts
+fi
+
+if ! command -v nvim >/dev/null 2>&1; then
+    echo "Installing Neovim..."
+    brew install neovim
+fi
+
+if ! command -v luarocks >/dev/null 2>&1; then
+    echo "Installing LuaRocks..."
+    brew install luarocks
+fi
+
+if ! command -v fzf >/dev/null 2>&1; then
+    echo "Installing fzf..."
+    brew install fzf
+    # Install shell extensions
+    "$(brew --prefix)/opt/fzf/install" --all --no-bash --no-fish
+fi
+
+if ! command -v zoxide >/dev/null 2>&1; then
+    echo "Installing zoxide..."
+    brew install zoxide
+fi
+
+if ! command -v clang >/dev/null 2>&1; then
+    echo "Installing LLVM..."
+    brew install llvm
+fi
+
+if ! command -v lazygit >/dev/null 2>&1; then
+    echo "Installing lazygit..."
+    brew install lazygit
+fi
+
+if ! command -v tmux >/dev/null 2>&1; then
+    echo "Installing tmux..."
+    brew install tmux
+fi
+
+if [[ ! -f "$HOME/.tmux.conf" ]]; then
+    ln -s "$HOME/.config/tmux/tmux.conf" "$HOME/.tmux.conf"
+fi
+
+if [[ ! -d "$HOME/.tmux/plugins/tpm" ]]; then
+    echo "Installing Tmux Plugin Manager (TPM)..."
+    git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
+fi
+
+if [[ -d "$HOME/.tmux/plugins/tpm" ]]; then
+    echo "Installing Tmux plugins..."
+    "$HOME/.tmux/plugins/tpm/bin/install_plugins" >/dev/null 2>&1 || true
+fi
+
+if ! command -v alacritty >/dev/null 2>&1; then
+    echo "Installing Alacritty..."
+    brew install --cask alacritty
+fi
+
+if ! infocmp alacritty >/dev/null 2>&1; then
+    echo "Installing Alacritty terminfo..."
+    tic -xe alacritty,alacritty-direct "$(brew --prefix alacritty)/share/alacritty/alacritty.info"
+fi
+
+if ! command -v btop >/dev/null 2>&1; then
+    echo "Installing btop..."
+    brew install btop
+fi
+
+git config --global user.name "Batuhan Yenidunya"
+git config --global user.email "batuhanyndny@gmail.com"
+git config --global core.editor "nvim"
+git config --global pull.rebase true
+git config --global init.defaultBranch main
+
+echo "Bootstrap complete."
