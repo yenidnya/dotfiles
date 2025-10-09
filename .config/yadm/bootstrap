@@ -100,6 +100,11 @@ if ! command -v tmux >/dev/null 2>&1; then
     brew install tmux
 fi
 
+if ! command -v luacheck >/dev/null 2>&1; then
+    echo "Installing luacheck..."
+    brew install luacheck
+fi
+
 if [[ ! -f "$HOME/.tmux.conf" ]]; then
     ln -s "$HOME/.config/tmux/tmux.conf" "$HOME/.tmux.conf"
 fi
