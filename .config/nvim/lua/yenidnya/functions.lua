@@ -32,9 +32,10 @@ end, {})
 api.nvim_create_user_command("ActiveLinters", function()
 	local linters = require("lint").get_running()
 	if #linters == 0 then
-		return "󰦕"
+		vim.notify("No active linters")
+	else
+		vim.notify("󱉶 " .. table.concat(linters, ", "), vim.log.levels.INFO)
 	end
-	return "󱉶 " .. table.concat(linters, ", ")
 end, {})
 
 api.nvim_create_user_command("TogglePrettier", function()
