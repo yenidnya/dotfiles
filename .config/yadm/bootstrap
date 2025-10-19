@@ -105,6 +105,11 @@ if ! command -v luacheck >/dev/null 2>&1; then
     brew install luacheck
 fi
 
+if ! command -v rg >/dev/null 2>&1; then
+    echo "Installing ripgrep..."
+    brew install ripgrep
+fi
+
 if [[ ! -f "$HOME/.tmux.conf" ]]; then
     ln -s "$HOME/.config/tmux/tmux.conf" "$HOME/.tmux.conf"
 fi
